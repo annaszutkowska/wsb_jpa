@@ -37,7 +37,6 @@ public class PatientEntity {
     private AddressEntity address;
 
     @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<VisitEntity> visits;
 
     public Long getId() {
         return id;
@@ -109,13 +108,5 @@ public class PatientEntity {
 
     public void setAddress(AddressEntity addressEntity) {
         this.address = addressEntity;
-    }
-
-    public List<VisitEntity> getVisits() {
-        return visits;
-    }
-
-    public void setVisits(List<VisitEntity> visits) {
-        this.visits = visits;
     }
 }

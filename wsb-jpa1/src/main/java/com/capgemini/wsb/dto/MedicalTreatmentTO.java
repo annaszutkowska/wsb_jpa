@@ -1,5 +1,7 @@
 package com.capgemini.wsb.dto;
 
+import com.capgemini.wsb.persistence.enums.TreatmentType;
+
 import java.io.Serializable;
 
 
@@ -9,5 +11,7 @@ public class MedicalTreatmentTO implements Serializable {
 
     private String description;
 
-    private String type;
+    private TreatmentType type;
+
+    private VisitTO visit;
 }
