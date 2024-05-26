@@ -1,43 +1,30 @@
-package com.capgemini.wsb.persistence.entity;
+package com.capgemini.wsb.dto;
 
-import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
-@Entity
-@Table(name = "PATIENT")
-public class PatientEntity {
+public class PatientTO implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
     private String firstName;
 
-    @Column(nullable = false)
     private String lastName;
 
-    @Column(nullable = false)
     private String telephoneNumber;
 
     private String email;
 
-    @Column(nullable = false)
     private String patientNumber;
 
-    @Column(nullable = false)
     private LocalDate dateOfBirth;
 
-    @Column(nullable = false)
-    private boolean isInsured;
+    private List<VisitTO> visits;
 
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "address_id", nullable = false)
-    private AddressEntity address;
+    private AddressTO address;
 
-    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<VisitEntity> visits;
+    private Boolean isInsured;
 
     public Long getId() {
         return id;
@@ -100,22 +87,22 @@ public class PatientEntity {
     }
 
     public void setInsured(boolean insured) {
-        this.isInsured = insured;
+        isInsured = insured;
     }
 
-    public AddressEntity getAddress() {
+    public AddressTO getAddress() {
         return address;
     }
 
-    public void setAddress(AddressEntity addressEntity) {
-        this.address = addressEntity;
+    public void setAddress(AddressTO address) {
+        this.address = address;
     }
 
-    public List<VisitEntity> getVisits() {
+    public List<VisitTO> getVisits() {
         return visits;
     }
 
-    public void setVisits(List<VisitEntity> visits) {
+    public void setVisits(List<VisitTO> visits) {
         this.visits = visits;
     }
 }

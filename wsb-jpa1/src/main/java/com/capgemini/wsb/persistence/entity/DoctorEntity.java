@@ -3,6 +3,7 @@ package com.capgemini.wsb.persistence.entity;
 import com.capgemini.wsb.persistence.enums.Specialization;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.List;
 
 @Entity
@@ -94,4 +95,19 @@ public class DoctorEntity {
 		this.specialization = specialization;
 	}
 
+	public void setAddress(AddressEntity addressEntity) {
+		this.address = addressEntity;
+	}
+
+	public AddressEntity getAddress() {
+		return address;
+	}
+
+	public List<VisitEntity> getVisits() {
+		return visits;
+	}
+
+	public void setVisits(List<VisitEntity> visitsEntity) {
+		this.visits = visitsEntity;
+	}
 }
