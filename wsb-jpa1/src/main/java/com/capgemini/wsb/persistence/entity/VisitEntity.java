@@ -17,7 +17,7 @@ public class VisitEntity {
     @Column(nullable = false)
     private LocalDateTime time;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "doctor_id", nullable = false)
     private DoctorEntity doctor;
 
@@ -66,5 +66,13 @@ public class VisitEntity {
 
     public void setPatient(PatientEntity patientEntity) {
         this.patient = patientEntity;
+    }
+
+    public void setMedicalTreatments(List<MedicalTreatmentEntity> medicalTreatments) {
+        this.medicalTreatments = medicalTreatments;
+    }
+
+    public List<MedicalTreatmentEntity> getMedicalTreatments() {
+        return medicalTreatments;
     }
 }

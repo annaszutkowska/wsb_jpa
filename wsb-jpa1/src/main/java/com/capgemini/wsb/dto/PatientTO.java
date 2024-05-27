@@ -90,6 +90,10 @@ public class PatientTO implements Serializable {
         isInsured = insured;
     }
 
+    public Boolean getInsured() {
+        return isInsured;
+    }
+
     public AddressTO getAddress() {
         return address;
     }

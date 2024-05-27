@@ -32,11 +32,12 @@ public class PatientEntity {
     @Column(nullable = false)
     private boolean isInsured;
 
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToOne
     @JoinColumn(name = "address_id", nullable = false)
     private AddressEntity address;
 
     @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<VisitEntity> visits;
 
     public Long getId() {
         return id;
@@ -108,5 +109,13 @@ public class PatientEntity {
 
     public void setAddress(AddressEntity addressEntity) {
         this.address = addressEntity;
+    }
+
+    public List<VisitEntity> getVisits() {
+        return visits;
+    }
+
+    public void setVisits(List<VisitEntity> visits) {
+        this.visits = visits;
     }
 }

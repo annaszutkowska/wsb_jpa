@@ -1,4 +1,3 @@
--- Insert addresses
 INSERT INTO address (id, address_line1, address_line2, city, postal_code) VALUES
     (1, 'xx', 'yy', 'city', '62-030'),
     (2, '123 Main St', 'Apt 101', 'New York', '10001'),
@@ -11,7 +10,6 @@ INSERT INTO address (id, address_line1, address_line2, city, postal_code) VALUES
     (9, '505 Ash St', 'Unit 10', 'Denver', '80203'),
     (10, '606 Walnut St', 'Suite 100', 'Miami', '33101');
 
--- Insert patients
 INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, address_id, is_insured) VALUES
     (1, 'Emma', 'Johnson', '987654321', 'emma.j@example.com', 'P11', '1990-01-01', 1, TRUE),
     (2, 'John', 'Smith', '123456789', 'john.s@example.com', 'P12', '1985-06-15', 2, FALSE),
@@ -24,7 +22,6 @@ INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient
     (9, 'Isabella', 'Miller', '321654987', 'isabella.m@example.com', 'P19', '1988-02-14', 9, TRUE),
     (10, 'Mia', 'Wilson', '456987321', 'mia.w@example.com', 'P20', '1992-07-07', 10, FALSE);
 
--- Insert doctors
 INSERT INTO doctor (id, first_name, last_name, telephone_number, email, specialization, doctor_number, address_id) VALUES
     (1, 'Michael', 'Johnson', '987654321', 'michael.j@example.com', 'SURGEON', 'D11', 1),
     (2, 'Emily', 'Smith', '123456789', 'emily.s@example.com', 'GP', 'D12', 2),
@@ -34,7 +31,6 @@ INSERT INTO doctor (id, first_name, last_name, telephone_number, email, speciali
     (6, 'Laura', 'Clark', '998877665', 'laura.c@example.com', 'GP', 'D16', 6),
     (7, 'Robert', 'Martinez', '443322110', 'robert.m@example.com', 'OCULIST', 'D17', 7);
 
--- Insert visits
 INSERT INTO visit (id, description, time, doctor_id, patient_id) VALUES
     (1, 'Routine check-up', '2024-05-13 09:00:00', 1, 1),
     (2, 'Vaccination appointment', '2024-05-14 10:30:00', 2, 2),
@@ -47,15 +43,14 @@ INSERT INTO visit (id, description, time, doctor_id, patient_id) VALUES
     (9, 'Allergy testing', '2024-05-21 15:30:00', 4, 1),
     (10, 'Vaccination booster', '2024-05-22 16:00:00', 2, 10);
 
--- Insert medical treatments
 INSERT INTO medical_treatment (id, description, type, visit_id) VALUES
-    (1, 'Prescription for blood pressure medication', 'Medication', 1),
-    (2, 'Administered flu vaccine', 'Vaccine', 2),
-    (3, 'Physical therapy session', 'Therapy', 3),
-    (4, 'Prescribed ointment for skin condition', 'Medication', 4),
-    (5, 'General check-up and lab tests', 'Check-up', 5),
-    (6, 'Prescribed antacid medication', 'Medication', 6),
-    (7, 'Blood pressure monitoring', 'Check-up', 7),
-    (8, 'Insulin dosage adjustment', 'Medication', 8),
-    (9, 'Allergy shots', 'Injection', 9),
-    (10, 'Administered tetanus booster', 'Vaccine', 10);
+    (1, 'Prescription for blood pressure medication', 'USG', 1),
+    (2, 'Administered flu vaccine', 'EKG', 2),
+    (3, 'Physical therapy session', 'EKG', 3),
+    (4, 'Prescribed ointment for skin condition', 'USG', 4),
+    (5, 'General check-up and lab tests', 'EKG', 5),
+    (6, 'Prescribed antacid medication', 'USG', 6),
+    (7, 'Blood pressure monitoring', 'RTG', 7),
+    (8, 'Insulin dosage adjustment', 'USG', 8),
+    (9, 'Allergy shots', 'RTG', 9),
+    (10, 'Administered tetanus booster', 'EKG', 10);
